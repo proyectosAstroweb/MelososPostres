@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+   
+
+
+
+ <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('.price-item');
+
+  const observerOptions = {
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-slide-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  items.forEach(item => {
+    // Para que la animación no inicie hasta que esté en vista
+    item.classList.remove('animate-slide-in'); 
+    observer.observe(item);
+  });
+});
+
+
+  </script>
+ 
+    <title>Melosos postres</title>
+    <style>
+        /* Estilos Generales */
+        body {
+         font-family: 'Montserrat';
+         font-weight: 80px;
+            margin: 0;
+            padding: 0;
+           background: linear-gradient(45deg,   #ff69b4, #fff990, #ff69b4,  #fff990);
+   
+            color: #333;
+        }
+
+       
+        header {
+            background: linear-gradient(135deg, #d48ad1, #f3a6e0);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Menú de navegación */
+        nav {
+            background-color: #b256c1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #8e3fa1;
+        }
+
+        /* Secciones */
+section {
+            padding: 40px 20px;
+        }
+
+        /* Títulos de sección */
+h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 3em;
+        }
+
+        /* Contenido de secciones */
+.nuestras-especialidades, .nuestras-creaciones, .precios, .valores, .contacto {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Especialidades y creaciones */
+.cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+.card {
+            background-color: #ffe4e1;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 430px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.7s;
+        }
+
+.card:hover {
+            transform: translateY(-5px);
+        }
+
+.card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+.card h3 {
+            margin-top: 15px;
+                 font-size: 1.9em;
+            color: #a64ca6;
+        }
+
+.card p {
+            margin-top: 10px;
+            font-size: 1.9em;
+        }
+
+        /* Precios */
+.prices {
+            display: flex;
+            flex-direction: column;
+            font-size: 34px;
+            gap: 15px;
+        }
+
+.price-item {
+            background-color: #fff0f5;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+.price-item h4 {
+            margin: 0 0 10px 0;
+            color: #a64ca6;
+        }
+
+.price-item p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* Valores */
+.valores-list {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+.valor {
+            background-color: #ffe4e1;
+            padding: 40px;
+            border-radius: 20px;
+            width: 250px;
+            height: 270px;
+            text-align:justify-all;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+.valor h3 {
+            color: #a64ca6;
+         
+            font-size: 2.7em;
+           margin-bottom: 0px;
+           margin-top: 19px;
+        }
+
+.valor p {
+            margin-top: 7px;
+              font-size:1.6em;
+                 font-family: "Arial";
+        }
+
+footer {
+            background: linear-gradient(135deg, #d48ad1, #f3a6e0);
+            color: black;
+             font-size: 1.3em;
+            text-align: center;
+            padding: 20px;
+        }
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  opacity: 0; /* Inicio invisible */
+  animation: slideInFromLeft 1s forwards; 
+}
+@media(max-width: 768px) {
+    
+        .cards {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .valores-list {
+            flex-direction: column;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+      <img src="logo.png"   style=" margin-left: 100px; width:199px; height:160px;"  alt="logo" />
+                   
+     
+    
+    </header>
+
+    <nav>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#creaciones">Nuestras Creaciones</a>
+        <a href="#precios">Precios</a>
+        <a href="#valores">Valores</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+ <!-- Sección de video 
+    <section id="video" style="padding: 20px; text-align: center;">
+      
+       
+        <video width="100%" height="auto" controls>
+            <source src="ruta-del-video.mp4" type="video/mp4" />
+            Tu navegador no soporta la reproducción de video.
+        </video>
+        Alternativamente, si quieres incrustar un video de YouTube -->
+        <!--
+        <iframe width="80%" height="450" src="https://www.youtube.com/embed/ID_DEL_VIDEO" 
+            title="Video de presentación" frameborder="0" allowfullscreen></iframe>
+        -->
+    </section>
+  <section id="especialidades" >
+
+        <h2>Especialidades</h2>
+        <div class="nuestras-especialidades">
+            <div class="cards">
+                <div class="card">
+                    <img src="cake.png" alt="Tarta de Chocolate" />
+                    <h3>Tortas de Chocolate</h3>
+                    <p> Base crujiente con relleno</p>
+                </div>
+                <div class="card">
+                    <img src="cup.png" alt="Cupcakes" />
+                    <h3>Cupcakes</h3>
+                    <p>Esponjosos cupcakes con toppings variados.</p>
+                </div>
+                <div class="card">
+                    <img src="lemon.png" alt="pie" />
+                    <h3>Pie de limon</h3>
+                    <p> Perfectos para compartir en cualquier ocasión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nuestras Creaciones -->
+    <section id="creaciones">
+        <h2>Nuestras Creaciones</h2>
+        <div class="nuestras-creaciones">
+            <div class="cards">
+                    <div class="card">
+                    <img src="cake1.jpg" alt="Torta" />
+                    <h3>Torta de cacao oscuro, relleno y decoración de chantilly</h3>
+                    <p></p>
+                </div>
+                <div class="card">
+                    <img src="cake2.jpg" alt="Postres" />
+                    <h3>Minicake 700g</h3>
+                  
+                </div>
+                <div class="card">
+                    <img src="cake3.jpg" alt="Macarons" />
+                
+                    <h3>Torta de vainilla, dos capas de relleno con ganache de chocolate </h3>
+                </div>
+                <div class="card">
+                    <img src="cake4.jpg" alt="Tarta de Fresa" />
+                   
+                    <h3>Torta choco arequipe.</h3>
+                </div>
+                <div class="card">
+                    <img src="cake5.jpg" alt="Postre en copas" />
+                    <h3>Torta Bombón</h3>
+                   
+                </div>
+                <div class="card">
+                    <img src="cake6.jpg" alt="Macarons" />
+                    <h3>Torta doble altura</h3>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="precios">
+    <h2> Precios</h2>
+    <div class="precios">
+        <div class="prices">
+            <div class="price-item animate-slide-in">
+                <h4>Torta de Chocolate</h4>
+                <p>Desde $ por porción</p>
+            </div>
+            <div class="price-item animate-slide-in" style="animation-delay: 0.2s;">
+                <h4>Cupcakes</h4>
+                <p>Decorados: </p>
+            </div>
+            <div class="price-item animate-slide-in" style="animation-delay: 0.4s;">
+                <h4>Pie de limón</h4>
+                <p>Desde 20$  </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="valores">
+        <h2>Nuestros Valores</h2>
+        <div class="valores-list">
+            <div class="valor">
+                <h3>Calidad</h3>
+                <p>Empleamos ingredientes frescos y de primera calidad en cada  una de nuestras creaciones, siguiendo prácticas de higiene.</p>
+            </div>
+            <div class="valor">
+                <h3>Creatividad</h3>
+                <p>Innovamos en presentaciones, diseños y sabores para la satisfacción de nuestros clientes</p>
+            </div>
+            <div class="valor">
+                <h3>Compromiso</h3>
+                <p> Dedicación y atención al detalle en la elaboración de cada postre</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto">
+       
+      
+    </section>
+
+ 
+    <footer>
+        <p>&copy; 2025 melosos postres. Todos los derechos reservados.</p>
+       <a href="https://instagram.com/" target="_blank" style="margin: 0 15px; text-decoration: none; color:black;">
+    <i class="fab fa-instagram" style="font-size: 36px; color:black;"></i>
+  </a>
+ 
+  <a href="https://wa.me/584127094288" target="_blank" style="margin: 0 15px; text-decoration: none; color: #000;">
+    <i class="fab fa-whatsapp" style="font-size: 36px;"></i>
+  </a>
+    </footer>
+</body>
+</html>
