@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-   
-
-
-
  <script>
     document.addEventListener('DOMContentLoaded', () => {
   const items = document.querySelectorAll('.price-item');
@@ -16,7 +12,6 @@
   const observerOptions = {
     threshold: 0.1
   };
-
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -27,7 +22,6 @@
   }, observerOptions);
 
   items.forEach(item => {
-    // Para que la animación no inicie hasta que esté en vista
     item.classList.remove('animate-slide-in'); 
     observer.observe(item);
   });
@@ -35,42 +29,32 @@
 
 
   </script>
- 
     <title>Melosos postres</title>
-
     <style>
-        /* Estilos Generales */
         body {
          font-family: 'Montserrat';
          font-weight: 80px;
             margin: 0;
             padding: 0;
            background: linear-gradient(45deg,   #ff69b4, #fff990, #ff69b4,  #fff990);
-   
             color: #333;
         }
-
-       
         header {
             background: linear-gradient(135deg, #d48ad1, #f3a6e0);
             padding: 20px;
             text-align: center;
             color: #fff;
         }
-
         header h1 {
             margin: 0;
             font-size: 2.5em;
         }
-
-        /* Menú de navegación */
         nav {
             background-color: #b256c1;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
         }
-
         nav a {
             color: #fff;
             padding: 14px 20px;
@@ -78,17 +62,14 @@
             font-weight: bold;
             transition: background 0.3s;
         }
-
         nav a:hover {
             background-color: #8e3fa1;
         }
 
-        /* Secciones */
 section {
             padding: 40px 20px;
         }
 
-        /* Títulos de sección */
 h2 {
             color: white;
             text-align: center;
@@ -266,13 +247,12 @@ footer {
         -->
     </section>
   <section id="especialidades" >
-
         <h2>Especialidades</h2>
         <div class="nuestras-especialidades">
             <div class="cards">
                 <div class="card">
                     <img src="cake.png" alt="Tarta de Chocolate" />
-                    <h3>Tortas de Chocolate</h3>
+                    <h3>Tortas de Cumpleaños</h3>
                     <p> Base crujiente con relleno</p>
                 </div>
                 <div class="card">
@@ -289,7 +269,6 @@ footer {
         </div>
     </section>
 
-    <!-- Sección Nuestras Creaciones -->
     <section id="creaciones">
         <h2>Nuestras Creaciones</h2>
         <div class="nuestras-creaciones">
@@ -322,32 +301,29 @@ footer {
                 <div class="card">
                     <img src="cake6.jpg" alt="Macarons" />
                     <h3>Torta doble altura</h3>
-                   
                 </div>
             </div>
         </div>
     </section>
-
     <section id="precios">
     <h2> Precios</h2>
     <div class="precios">
         <div class="prices">
             <div class="price-item animate-slide-in">
-                <h4>Torta de Chocolate</h4>
-                <p>Desde $ por porción</p>
+                <h4>Torta de Cumpleaños</h4>
+                <p>Desde $30</p>
             </div>
             <div class="price-item animate-slide-in" style="animation-delay: 0.2s;">
                 <h4>Cupcakes</h4>
-                <p>Decorados: </p>
+                <p>Desde $2 </p>
             </div>
             <div class="price-item animate-slide-in" style="animation-delay: 0.4s;">
                 <h4>Pie de limón</h4>
-                <p>Desde 20$  </p>
+                <p>Desde $25  </p>
             </div>
         </div>
     </div>
 </section>
-
     <section id="valores">
         <h2>Nuestros Valores</h2>
         <div class="valores-list">
@@ -366,21 +342,13 @@ footer {
         </div>
     </section>
 
-    <!-- Sección Contacto -->
     <section id="contacto">
-       
-      
-    </section>
 
- 
+    </section>
     <footer>
         <p>&copy; 2025 melosos postres. Todos los derechos reservados.</p>
        <a href="https://instagram.com/" target="_blank" style="margin: 0 15px; text-decoration: none; color:black;">
     <i class="fab fa-instagram" style="font-size: 36px; color:black;"></i>
-  </a>
- 
-  <a href="https://wa.me/584127094288" target="_blank" style="margin: 0 15px; text-decoration: none; color: #000;">
-    <i class="fab fa-whatsapp" style="font-size: 36px;"></i>
   </a>
     </footer>
 </body>
